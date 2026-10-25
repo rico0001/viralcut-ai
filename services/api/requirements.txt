@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+alembic
+psycopg2-binary
+python-multipart
+celery
+redis
+httpx
+python-dotenv
+pytest
+pytest-asyncio
+mypy
+black
+flake8

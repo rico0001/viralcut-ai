@@ -1,0 +1,81 @@
+# /viralcut-ai/viralcut-ai/apps/web/app/settings
+
+import { useState } from 'react';
+
+const Settings = () => {
+    const [preferences, setPreferences] = useState({
+        clipDuration: 30,
+        numberOfClips: 5,
+        captionStyle: 'default',
+        outputFormat: 'mp4',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setPreferences((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Save preferences logic here
+    };
+
+    return (
+        <div className="settings-container">
+            <h1>User Settings</h1>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="clipDuration">Default Clip Duration (seconds):</label>
+                    <input
+                        type="number"
+                        id="clipDuration"
+                        name="clipDuration"
+                        value={preferences.clipDuration}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="numberOfClips">Default Number of Clips:</label>
+                    <input
+                        type="number"
+                        id="numberOfClips"
+                        name="numberOfClips"
+                        value={preferences.numberOfClips}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="captionStyle">Caption Style:</label>
+                    <select
+                        id="captionStyle"
+                        name="captionStyle"
+                        value={preferences.captionStyle}
+                        onChange={handleChange}
+                    >
+                        <option value="default">Default</option>
+                        <option value="bold">Bold</option>
+                        <option value="italic">Italic</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="outputFormat">Output Format:</label>
+                    <select
+                        id="outputFormat"
+                        name="outputFormat"
+                        value={preferences.outputFormat}
+                        onChange={handleChange}
+                    >
+                        <option value="mp4">MP4</option>
+                        <option value="webm">WEBM</option>
+                    </select>
+                </div>
+                <button type="submit">Save Preferences</button>
+            </form>
+        </div>
+    );
+};
+
+export default Settings;

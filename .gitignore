@@ -1,0 +1,34 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+coverage/
+npm-debug.log*
+
+# Generated media and local runtime data
+storage/
+uploads/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

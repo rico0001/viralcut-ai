@@ -1,0 +1,9 @@
+celery
+redis
+ffmpeg-python
+pydantic
+sqlalchemy
+whisper
+aiofiles
+python-dotenv
+requests
